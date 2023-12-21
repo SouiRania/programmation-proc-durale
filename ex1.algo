@@ -1,0 +1,30 @@
+FUNCTION dot_product(V1,V2:ARRAY_OF INTEGER[5]) : INTEGER
+VAR
+    i,j,ps:INTEGER;
+BEGIN
+    FOR i FROM 0 TO V1.length -1 STEP 1  DO
+    FOR j FROM 0 TO V2.length -1 STEP 1  DO
+       ps:=ps+ V1[i]*V2[j]
+    END_FOR  
+    END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM orthogonal_procedure
+VAR
+    V1,V2: ARRAY_OF INTEGER[5];
+    ps:INTEGER;
+BEGIN
+    write("donner v1")
+    read("v1")
+    write("donner v2")
+    read("v2")
+    dot_product(V1,V2)
+    write(ps)
+    IF (ps=0) THEN
+       write("les vecteurs sont orthogonaux")
+       ELSE
+       write("les vecteurs ne sont pas orthogonaux")
+       END_IF
+    END_IF
+END

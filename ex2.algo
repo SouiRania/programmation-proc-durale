@@ -1,0 +1,15 @@
+PROCEDURE tri_selection(VAR tab : ARRAY_OF INTEGER)
+VAR
+    i,min,j:INTEGER;
+BEGIN
+    
+    FOR i FROM 0 TO tab.length -1 STEP 1  DO
+        min:=i;
+        FOR j FROM i TO tab.length -1-i STEP 1  DO
+            IF (tab[j]<tab[min]) THEN
+                min:=j;
+            END_IF
+        END_FOR   
+        swap(tab[min],tab[i]) 
+    END_FOR
+END
